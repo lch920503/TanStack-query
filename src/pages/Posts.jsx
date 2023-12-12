@@ -36,7 +36,7 @@ const Posts = () => {
 
   return (
     <>
-      <h1>Mutate</h1>
+      <h1>Post 보여주기 (Mutate)</h1>
       <form onSubmit={onSubmit}>
         <button type="submit">데이터 보내기</button>
       </form>

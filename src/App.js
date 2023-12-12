@@ -6,7 +6,7 @@ import Posts from "./pages/Posts";
 const App = () => {
   return (
     <>
-      <h1>User정보 입니다</h1>
+      <h1>User 정보 보여주기</h1>
       <User />
       <Posts />
       <ReactQueryDevtools initialIsOpen={false} />
