@@ -15,7 +15,7 @@ const PostList = () => {
         <p>is Loading...</p>
       ) : (
         <ul>
-          {postData.map((post) => (
+          {postData.slice(0, 10).map((post) => (
             <li key={post.id}>
               <h2>{post.title}</h2>
               <p>{post.body}</p>

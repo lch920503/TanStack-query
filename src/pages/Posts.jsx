@@ -1,10 +1,11 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { postPostsInfoFetch } from "../data/api";
 import { QueryKeys } from "../queryClient";
 import PostList from "../components/PostList";
 
 const Posts = () => {
+  const [isSubmit, setIsSubmit] = useState(false);
   const queryClient = useQueryClient();
   const { mutate: postMutate } = useMutation({
     mutationFn: (data) => postPostsInfoFetch(data),
@@ -30,7 +31,7 @@ const Posts = () => {
 
     postMutate(post);
 
-    console.log("클릭!!!");
+    setIsSubmit(true);
   };
 
   return (
@@ -39,7 +40,7 @@ const Posts = () => {
       <form onSubmit={onSubmit}>
         <button type="submit">데이터 보내기</button>
       </form>
-      <PostList />
+      {isSubmit && <PostList />}
     </>
   );
 };
